@@ -1,0 +1,19 @@
+<div class="container" [ngClass]="{hideSideBar}">
+    <div class="image-container"></div>
+    
+    <div class="title-opcion">
+        <atoms-text>ALL BOARDS (8)</atoms-text>
+    </div>
+
+    <div class="options">
+        <molecules-menu-option textOption="Opcion 1"></molecules-menu-option>
+    </div>
+
+    <div class="dark-switch">
+        <molecules-switch-dark></molecules-switch-dark>
+    </div>
+
+    <div class="hide-section" (click)="hideToggleSideBar()">
+        <atoms-text>Hide Sidebar</atoms-text>
+    </div>
+</div>

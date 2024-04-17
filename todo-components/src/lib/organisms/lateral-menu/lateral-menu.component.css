@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+.container {
+  background: #23232d;
+}
+
+.hideSideBar {
+  display: none;
+}

@@ -1,0 +1,1 @@
+export * from './lateral-menu/lateral-menu.component';
