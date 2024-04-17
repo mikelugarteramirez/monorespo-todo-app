@@ -16,12 +16,14 @@
             (emitsClick)="createBoard()"></molecules-menu-option>
     </div>
 
-    <div class="dark-switch">
-        <molecules-switch-dark></molecules-switch-dark>
-    </div>
-
-    <div class="hide-section" (click)="hideToggleSideBar()">
-        <mat-icon class="icon" aria-hidden="false" fontIcon="close_fullscreen"></mat-icon>
-        <atoms-text>Hide Sidebar</atoms-text>
+    <div class="bottom-section">
+        <div class="dark-switch">
+            <molecules-switch-dark></molecules-switch-dark>
+        </div>
+    
+        <div class="hide-section" (click)="hideToggleSideBar()">
+            <mat-icon class="icon" aria-hidden="false" fontIcon="close_fullscreen"></mat-icon>
+            <atoms-text>Hide Sidebar</atoms-text>
+        </div>
     </div>
 </div>

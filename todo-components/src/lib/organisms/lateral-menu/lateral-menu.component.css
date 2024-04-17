@@ -3,10 +3,19 @@
 }
 .container {
   background: #23232d;
+  height: 100%;
+  position: relative;
+}
+
+.bottom-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .dark-switch {
   margin-bottom: 20px;
+  padding: 0 25px;
 }
 
 .hide-section {
