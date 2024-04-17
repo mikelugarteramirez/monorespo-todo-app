@@ -10,8 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
         CommonModule, TextComponent, MatIconModule
     ],
     template: `
-    <div>
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    <div class="container" [ngClass]="{selected}">
+        <mat-icon class="icon" aria-hidden="false" fontIcon="view_list"></mat-icon>
         <atoms-text>{{textOption}}</atoms-text>
     </div>`,
     styleUrl: './menu-option.component.css',
@@ -20,4 +20,5 @@ import { MatIconModule } from '@angular/material/icon';
 export class MenuOptionComponent {
     @Input() textOption: string = '';
     @Input() iconName: string = '';
+    @Input() selected: boolean = true;
 }
