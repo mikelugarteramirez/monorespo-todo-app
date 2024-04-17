@@ -1,6 +1,11 @@
 div {
   width: 100%;
   display: flex;
-  padding: 25px;
+  padding: 5px;
   justify-content: space-around;
+  background-color: #1e1e23;
+}
+
+.icon {
+  color: #758193;
 }

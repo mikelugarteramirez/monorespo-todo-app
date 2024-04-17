@@ -5,6 +5,30 @@
   background: #23232d;
 }
 
+.dark-switch {
+  margin-bottom: 20px;
+}
+
+.hide-section {
+  display: flex;
+  color: #758193;
+  cursor: pointer;
+  padding-left: 25px;
+  padding-bottom: 20px;
+}
+
+.hide-section:hover {
+  color: #fff;
+}
+
+.hide-section .icon {
+  margin-right: 10px;
+}
+
 .hideSideBar {
   display: none;
+}
+
+.options {
+  padding-right: 25px;
 }

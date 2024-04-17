@@ -6,7 +6,14 @@
     </div>
 
     <div class="options">
-        <molecules-menu-option textOption="Opcion 1"></molecules-menu-option>
+        @for(option of options; track option.text) {
+            <molecules-menu-option [textOption]="option.text" [iconName]="option.icon" [selected]="option.selected"></molecules-menu-option>
+        }
+        <molecules-menu-option 
+            [textOption]="actionMenuOption.text"
+            [iconName]="actionMenuOption.icon"
+            [action]="actionMenuOption.action"
+            (emitsClick)="createBoard()"></molecules-menu-option>
     </div>
 
     <div class="dark-switch">
@@ -14,6 +21,7 @@
     </div>
 
     <div class="hide-section" (click)="hideToggleSideBar()">
+        <mat-icon class="icon" aria-hidden="false" fontIcon="close_fullscreen"></mat-icon>
         <atoms-text>Hide Sidebar</atoms-text>
     </div>
 </div>
