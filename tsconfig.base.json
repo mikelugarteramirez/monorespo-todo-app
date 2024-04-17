@@ -17,7 +17,8 @@
     "paths": {
       "@todoapp/todo-components/atoms": ["todo-components/src/lib/atoms/index.ts"],
       "@todoapp/todo-components/molecules": ["todo-components/src/lib/molecules/index.ts"],
-      "@todoapp/todo-components/organisms": ["todo-components/src/lib/organisms/index.ts"]
+      "@todoapp/todo-components/organisms": ["todo-components/src/lib/organisms/index.ts"],
+      "@todoapp/todo-components/interfaces": ["todo-components/src/lib/interfaces/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

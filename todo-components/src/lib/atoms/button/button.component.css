@@ -1,3 +1,16 @@
 :host {
   display: block;
 }
+
+.button {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #5a55b9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #46419F;
+}

@@ -1,0 +1,15 @@
+<div class="example-container">
+    <molecules-todo-status class="title" [text]="title"></molecules-todo-status>
+  
+    <div
+      cdkDropList
+      id="{{idList}}"
+      [cdkDropListData]="todos"
+      [cdkDropListConnectedTo]="listsIds"
+      class="itemList"
+      (cdkDropListDropped)="drop($event)">
+      @for (todo of todos; track todo.title) {
+        <molecules-todo-card cdkDrag [titleTask]="todo.title" [description]="todo.description" [totalSubTasks]="todo.subTasks.length"></molecules-todo-card>
+      }
+    </div>
+</div>

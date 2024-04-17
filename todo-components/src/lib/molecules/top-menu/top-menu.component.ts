@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TextComponent } from '../../atoms/text/text.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
 
@@ -15,4 +15,7 @@ import { ButtonComponent } from '../../atoms/button/button.component';
     styleUrl: './top-menu.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TopMenuComponent { }
+export class TopMenuComponent {
+    @Input() title: string = '';
+    @Input() buttonText: string = '';
+}

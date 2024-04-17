@@ -1,4 +1,7 @@
-<div>
+<div class="container">
     <atoms-text>{{titleTask}}</atoms-text>
-    <atoms-text>{{totalSubTasks}} of {{subTasksComplete}}</atoms-text>
+    <atoms-text>{{description}}</atoms-text>
+    @if(totalSubTasks != 0) {
+        <atoms-text class="totalSubTask" type="fade" size="small">{{totalSubTasks}} of {{subTasksComplete}}</atoms-text>
+    }
 </div>

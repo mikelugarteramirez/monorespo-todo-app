@@ -1,0 +1,10 @@
+<div class="container">
+    @for(listColumn of listColumns; track listColumn.idList){
+        <molecules-drag-drop-column class="column" 
+            [todos]="listColumn.todos"
+            [listsIds]="listColumn.listsIds"
+            [idList]="listColumn.idList"
+            [title]="listColumn.title"
+        ></molecules-drag-drop-column>
+    }
+</div>

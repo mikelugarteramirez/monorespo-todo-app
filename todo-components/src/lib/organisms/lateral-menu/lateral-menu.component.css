@@ -5,6 +5,12 @@
   background: #23232d;
   height: 100%;
   position: relative;
+  padding-top: 25px;
+}
+
+.title-opcion {
+  padding-left: 25px;
+  margin-bottom: 25px;
 }
 
 .bottom-section {

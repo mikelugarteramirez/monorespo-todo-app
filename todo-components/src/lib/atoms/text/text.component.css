@@ -1,3 +1,32 @@
 :host {
   display: block;
 }
+
+.textplain {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.small {
+  font-size: 12px!important;
+}
+
+.fade {
+  font-size: 16px;
+  font-weight: 200;
+  color: #758193!important;
+}
+
+.dark {
+  color: #fff;
+}

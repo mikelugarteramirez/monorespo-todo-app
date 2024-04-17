@@ -1,7 +1,8 @@
 <div class="container">
-    <organisms-lateral-menu class="menu-lateral"></organisms-lateral-menu>
+    <organisms-lateral-menu [boards]="boards" (clickOptionChange)="clickOption($event)" class="menu-lateral"></organisms-lateral-menu>
     <div class="board">
-        <molecules-top-menu></molecules-top-menu>
+        <molecules-top-menu [title]="selectedOption.name" class="top-menu"></molecules-top-menu>
+        <organisms-board [listColumns]="selectedOption.columns" class="organisms-board"></organisms-board>
     </div>
 </div>
 <router-outlet></router-outlet>

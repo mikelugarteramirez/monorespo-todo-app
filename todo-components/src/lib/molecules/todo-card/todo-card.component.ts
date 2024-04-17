@@ -15,6 +15,7 @@ import { TextComponent } from '../../atoms/text/text.component';
 })
 export class TodoCardComponent {
     @Input() titleTask: string = '';
+    @Input() description: string = '';
     @Input() totalSubTasks: number = 0;
     @Input() subTasksComplete: number = 0;
 }

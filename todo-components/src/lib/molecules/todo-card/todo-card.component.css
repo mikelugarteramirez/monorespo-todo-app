@@ -1,3 +1,15 @@
 :host {
   display: block;
 }
+
+.totalSubTask {
+  margin-top: 10px;
+}
+
+.container {
+  background: rgb(35, 35, 45);
+  box-shadow: rgb(0, 0, 0) 1px 1px 10px;
+  padding: 25px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}

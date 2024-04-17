@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TextComponent } from '../../atoms/text/text.component';
 
 @Component({
@@ -9,10 +9,13 @@ import { TextComponent } from '../../atoms/text/text.component';
         CommonModule,
         TextComponent
     ],
-    template: `<div>
-        <div class="circle"></div><atoms-text></atoms-text>
+    template: `<div class="container">
+        <div class="circle" [ngStyle]="{'background': color}"></div><atoms-text type="fade">{{text}}</atoms-text>
     </div>`,
     styleUrl: './todo-status.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodoStatusComponent {}
+export class TodoStatusComponent {
+    @Input() text!: string;
+    @Input() color: string = 'red';
+}
