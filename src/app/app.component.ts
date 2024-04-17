@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IBoard } from '@todoapp/todo-components/interfaces';
 import { DragDropColumnComponent, TopMenuComponent } from '@todoapp/todo-components/molecules';
-import { BoardComponent, LateralMenuComponent } from '@todoapp/todo-components/organisms';
+import { BoardComponent, LateralMenuComponent, ModalComponent } from '@todoapp/todo-components/organisms';
 
 @Component({
   standalone: true,
   imports: [RouterModule,
-    LateralMenuComponent, TopMenuComponent, BoardComponent, DragDropColumnComponent
+    LateralMenuComponent, TopMenuComponent, BoardComponent, DragDropColumnComponent, ModalComponent
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',

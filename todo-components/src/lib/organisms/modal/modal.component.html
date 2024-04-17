@@ -1,0 +1,18 @@
+<div class="modal">
+    <form class="modal-content" [formGroup]="form">
+        <atoms-text class="taskTitle">Add New Task</atoms-text>
+        <molecules-input controlName="title" type="text" label="Title:"></molecules-input>
+        <molecules-input controlName="description" type="textarea" label="Description:"></molecules-input>
+        @if(formSubtasks.length > 0) {
+            <atoms-text size="small">Subtasks:</atoms-text>
+        }
+        @for(subtask of formSubtasks; track subtask; let index = $index) {
+            <div [formGroup]="subtask" >
+                <atoms-input controlName="subtask" class="subtask" type="text"></atoms-input>
+            </div>
+        }
+        <atoms-button class="button" (click)="addSubTask()" size="full">+ Add New Subtask</atoms-button>
+        <molecules-input controlName="status" type="select" label="Status:"></molecules-input>
+        <atoms-button class="button" (click)="createTask()" size="full">Create task</atoms-button>
+    </form>
+</div>

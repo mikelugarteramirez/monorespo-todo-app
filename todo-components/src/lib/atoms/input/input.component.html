@@ -1,1 +1,18 @@
-<input>
+@switch(type){
+    @case("text") {
+        <input type="text" [formControlName]="controlName" >
+    }
+    @case("textarea") {
+        <textarea [formControlName]="controlName"></textarea>
+    }
+    @case("select") {
+        <select [formControlName]="controlName">
+            @for(option of options; track option) {
+                <option [value]="option">{{option}}</option>
+            }
+        </select>
+    }
+    @default {
+        <input type="text">
+    }
+}

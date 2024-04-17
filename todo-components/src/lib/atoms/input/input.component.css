@@ -1,3 +1,35 @@
 :host {
   display: block;
 }
+
+input[type=text] {
+  background-color: #23232d;
+  border: 1px solid #c2c2c2;
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+  border-radius: 5px;
+  width: -webkit-fill-available;
+}
+
+textarea {
+  background-color: #23232d;
+  border: 1px solid #c2c2c2;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+  resize: none;
+  width: -webkit-fill-available;
+}
+
+select {
+  background-color: #23232d;
+  border: 1px solid #c2c2c2;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+  resize: none;
+  width: -webkit-fill-available;
+}

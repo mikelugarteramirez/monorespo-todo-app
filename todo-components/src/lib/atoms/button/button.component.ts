@@ -12,5 +12,5 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-    
+    @Input() size: 'small' | 'medium' | 'full' = 'medium';
 }

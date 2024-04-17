@@ -14,3 +14,7 @@
 .button:hover {
   background-color: #46419F;
 }
+
+.full {
+  width: 100%;
+}
