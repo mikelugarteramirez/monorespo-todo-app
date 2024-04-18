@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IBoard } from '@todoapp/todo-components/interfaces';
 import { DragDropColumnComponent, TopMenuComponent } from '@todoapp/todo-components/molecules';
 import { BoardComponent, LateralMenuComponent, ModalComponent } from '@todoapp/todo-components/organisms';
+import { BoardService } from 'src/services/board.service';
 
 @Component({
   standalone: true,
@@ -15,256 +16,17 @@ import { BoardComponent, LateralMenuComponent, ModalComponent } from '@todoapp/t
 })
 export class AppComponent implements OnInit {
 
-  boards: IBoard[] = [
-    {
-      name: 'Platform Launch',
-      active: true,
-      icon: 'view_list',
-      columns: [{
-          listsIds: ['listColumn2', 'listColumn3'],
-          idList: 'listColumn1',
-          title: 'Todo',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        },
-        {
-          listsIds: ['listColumn1', 'listColumn3'],
-          idList: 'listColumn2',
-          title: 'Todo 2',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        },
-        {
-          listsIds: ['listColumn1', 'listColumn2'],
-          idList: 'listColumn3',
-          title: 'Todo 3',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'Marketing Plan',
-      active: false,
-      icon: 'view_list',
-      columns: [{
-          listsIds: ['listColumn2', 'listColumn3'],
-          idList: 'listColumn1',
-          title: 'Todo',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        },
-        {
-          listsIds: ['listColumn1', 'listColumn3'],
-          idList: 'listColumn2',
-          title: 'Todo 2',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        },
-        {
-          listsIds: ['listColumn1', 'listColumn2'],
-          idList: 'listColumn3',
-          title: 'Todo 3',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'Road Map',
-      active: false,
-      icon: 'view_list',
-      columns: [{
-          listsIds: ['listColumn2', 'listColumn3'],
-          idList: 'listColumn1',
-          title: 'Todo',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        },
-        {
-          listsIds: ['listColumn1', 'listColumn3'],
-          idList: 'listColumn2',
-          title: 'Todo 2',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        },
-        {
-          listsIds: ['listColumn1', 'listColumn2'],
-          idList: 'listColumn3',
-          title: 'Todo 3',
-          todos: [
-            {
-              title: 'Tarea 1',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 2',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            },
-            {
-              title: 'Tarea 3',
-              description: 'La tarea trata sobre',
-              status: 'todo',
-              subTasks: []
-            }
-          ]
-        }
-      ]
-    }
-  ];
+  boardService = inject(BoardService);
 
   selectedOption!: IBoard;
 
+  boards: IBoard[] = [];
+
   ngOnInit(): void {
-      this.selectedOption = this.boards[0];
+    this.boardService.board.subscribe(boards => {
+      this.boards = boards;
+    })
+    this.selectedOption = this.boards[0];
   }
 
   clickOption(option: string) {
