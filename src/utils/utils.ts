@@ -242,4 +242,8 @@ export const info = [
         }
       ]
     }
-  ]
+]
+
+export const removeReference = (data: any) => {
+  return JSON.parse(JSON.stringify(data))
+}

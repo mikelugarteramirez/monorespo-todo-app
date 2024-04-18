@@ -5,6 +5,7 @@
             [listsIds]="listColumn.listsIds"
             [idList]="listColumn.idList"
             [title]="listColumn.title"
+            (changeStatusTask)="changeTasksDroped($event)"
         ></molecules-drag-drop-column>
     }
 </div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import {
     CdkDragDrop,
@@ -9,7 +9,7 @@ import {
     CdkDropList,
   } from '@angular/cdk/drag-drop';
 import { TodoCardComponent } from '../todo-card/todo-card.component';
-import { ITask } from '../../interfaces/ITasks.interface';
+import { IDragDropInfoContainers, IDragDropInformation, ITask } from '../../interfaces/ITasks.interface';
 import { TodoStatusComponent } from '../todo-status/todo-status.component';
 
 @Component({
@@ -32,16 +32,23 @@ export class DragDropColumnComponent {
     @Input() idList!: string | number;
     @Input() title!: string;
 
+    @Output() changeStatusTask: EventEmitter<IDragDropInfoContainers> = new EventEmitter();
+
+    changeTaskListener(dragContainer: IDragDropInformation,  dropContainer: IDragDropInformation) {
+      this.changeStatusTask.emit({dragContainer, dropContainer});
+    }
+
     drop(event: CdkDragDrop<ITask[]>) {
-        if (event.previousContainer === event.container) {
-          moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-        } else {
+      // this.changeTaskListener(event.container, event.previousContainer);
+      if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      } else {
           transferArrayItem(
             event.previousContainer.data,
             event.container.data,
             event.previousIndex,
             event.currentIndex,
           );
-        }
+      }
     }
 }

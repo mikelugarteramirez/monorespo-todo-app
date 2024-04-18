@@ -23,3 +23,13 @@ export interface IBoard {
     columns: IListColumns[];
     active: boolean;
 }
+
+export interface IDragDropInformation {
+    id: string;
+    data: ITask[];
+}
+
+export interface IDragDropInfoContainers {
+    dragContainer: IDragDropInformation;
+    dropContainer: IDragDropInformation;
+}

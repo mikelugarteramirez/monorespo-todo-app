@@ -14,3 +14,7 @@
   margin-bottom: 25px;
   cursor: pointer;                                                                                                                
 }
+
+.container:active {
+  cursor: grabbing;
+}
