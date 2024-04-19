@@ -16,6 +16,6 @@ import { ButtonComponent } from '../../atoms/button/button.component';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopMenuComponent {
-    @Input() title: string = '';
-    @Input() buttonText: string = '';
+    @Input() title: string | undefined = '';
+    @Input() buttonText: string | undefined = '';
 }

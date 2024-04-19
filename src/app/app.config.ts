@@ -5,14 +5,13 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideStore, provideState } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import * as fromBoard from './+state/board.reducer';
-import { BoardEffects } from './+state/board.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideEffects(BoardEffects),
+    provideEffects(),
     provideState(fromBoard.BOARD_FEATURE_KEY, fromBoard.boardReducer),
     provideStore(),
     provideClientHydration(),
-    provideRouter(appRoutes),
+    provideRouter(appRoutes)
   ],
 };

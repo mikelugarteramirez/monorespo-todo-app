@@ -17,7 +17,9 @@ export const selectMenuBoards = createSelector(
   (state: BoardState) => state
 );
 
-export const selectBoard = createSelector(
+export const selectSelectedBoard = createSelector(
   selectBoardState,
-  (state: BoardState) => state
+  (state: BoardState) => state.boards.find((item) => {
+    return item.active;
+  })
 );

@@ -15,7 +15,7 @@ import { IDragDropInfoContainers, IListColumns } from '../../interfaces/ITasks.i
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BoardComponent {
-    @Input() listColumns!: IListColumns[];
+    @Input() listColumns: IListColumns[] | undefined;
     @Output() changeStatusTask: EventEmitter<IDragDropInfoContainers> = new EventEmitter();
 
     changeTasksDroped(information: IDragDropInfoContainers) {

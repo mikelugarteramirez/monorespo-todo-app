@@ -39,7 +39,7 @@ export class DragDropColumnComponent {
     }
 
     drop(event: CdkDragDrop<ITask[]>) {
-      // this.changeTaskListener(event.container, event.previousContainer);
+      this.changeTaskListener(event.container, event.previousContainer);
       if (event.previousContainer === event.container) {
         moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
       } else {
