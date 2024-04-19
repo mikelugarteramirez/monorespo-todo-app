@@ -24,5 +24,6 @@ export class InputComponent {
     @Input() type: 'text' | 'textarea' | 'select' = 'text';
     @Input() label!: string;
     @Input() controlName!: string;
+    @Input() optionsSelect: string[] = [];
     
 }

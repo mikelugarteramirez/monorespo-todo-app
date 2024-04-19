@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TextComponent } from '../../atoms/text/text.component';
+import { ITask } from '../../interfaces/ITasks.interface';
 
 @Component({
     selector: 'molecules-todo-card',
@@ -14,8 +15,11 @@ import { TextComponent } from '../../atoms/text/text.component';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoCardComponent {
-    @Input() titleTask: string = '';
-    @Input() description: string = '';
-    @Input() totalSubTasks: number = 0;
-    @Input() subTasksComplete: number = 0;
+    @Input() task!: ITask;
+
+    @Output() clickCardEvent: EventEmitter<ITask> = new EventEmitter();
+
+    clickCard() {
+        this.clickCardEvent.emit(this.task);
+    }
 }

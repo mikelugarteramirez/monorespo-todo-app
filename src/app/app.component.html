@@ -1,8 +1,25 @@
 <div class="container">
-    <organisms-lateral-menu [boards]="boards" (clickOptionChange)="clickOption($event)" class="menu-lateral"></organisms-lateral-menu>
+    <organisms-lateral-menu 
+    [boards]="boards" 
+    (clickOptionChange)="clickOption($event)" 
+    (clickAddBoard)="createBoard()"
+    class="menu-lateral"></organisms-lateral-menu>
     <div class="board">
-        <molecules-top-menu [title]="selectedOption?.name" class="top-menu"></molecules-top-menu>
-        <organisms-board [listColumns]="selectedOption?.columns" class="organisms-board" (changeStatusTask)="changeStatusTask($event)"></organisms-board>
+        <molecules-top-menu 
+        [title]="selectedOption?.name"
+        (clickButtonEmit)="createTask()"
+        class="top-menu"></molecules-top-menu>
+        <organisms-board class="organisms-board" 
+        [listColumns]="selectedOption?.columns" 
+        (changeStatusTask)="changeStatusTask($event)"
+        (clickCardEvent)="clickOneCard($event)"></organisms-board>
     </div>
 </div>
-<!-- <organisms-modal></organisms-modal> -->
+@if(menuInfo.swithShowModal.show) {
+    <organisms-modal 
+    [menuOptions]="menuInfo.statusOptions" 
+    [type]="menuInfo.swithShowModal.type" 
+    [detail]="task" 
+    (formResultValue)="closeModal($event)"
+    (formResultBoardValue)="closeModalBoard($event)"></organisms-modal>
+}

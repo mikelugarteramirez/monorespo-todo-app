@@ -1,18 +1,46 @@
 <div class="modal">
-    <form class="modal-content" [formGroup]="form">
-        <atoms-text class="taskTitle">Add New Task</atoms-text>
-        <molecules-input controlName="title" type="text" label="Title:"></molecules-input>
-        <molecules-input controlName="description" type="textarea" label="Description:"></molecules-input>
-        @if(formSubtasks.length > 0) {
-            <atoms-text size="small">Subtasks:</atoms-text>
-        }
-        @for(subtask of formSubtasks; track subtask; let index = $index) {
-            <div [formGroup]="subtask" >
-                <atoms-input controlName="subtask" class="subtask" type="text"></atoms-input>
-            </div>
-        }
-        <atoms-button class="button" (click)="addSubTask()" size="full">+ Add New Subtask</atoms-button>
-        <molecules-input controlName="status" type="select" label="Status:"></molecules-input>
-        <atoms-button class="button" (click)="createTask()" size="full">Create task</atoms-button>
-    </form>
+    @if(type == 'form'){
+        <form class="modal-content" [formGroup]="form">
+            <atoms-text class="taskTitle">Add New Task</atoms-text>
+            <molecules-input controlName="title" type="text" label="Title:"></molecules-input>
+            <molecules-input controlName="description" type="textarea" label="Description:"></molecules-input>
+            @if(formSubtasks.length > 0) {
+                <atoms-text size="small">Subtasks:</atoms-text>
+            }
+            @for(subtask of formSubtasks; track subtask; let index = $index) {
+                <div [formGroup]="subtask" >
+                    <atoms-input controlName="title" class="subtask" type="text"></atoms-input>
+                </div>
+            }
+            <atoms-button class="button" (click)="addSubTask()" size="full">+ Add New Subtask</atoms-button>
+            <molecules-input controlName="status" [optionsSelect]="menuOptions" type="select" label="Status:"></molecules-input>
+            <atoms-button class="button" (click)="createTask()" size="full">Create task</atoms-button>
+            <atoms-button class="button" (click)="closeTask()" size="full">Close</atoms-button>
+        </form>
+    }@else if(type == 'detail') {
+        <div class="modal-content" [formGroup]="form">
+            <atoms-text class="taskTitle">{{detail?.title}}</atoms-text>
+            <atoms-text type="fade">{{detail?.description}}</atoms-text>
+            @if(formSubtasks.length > 0) {
+                <atoms-text size="small">Subtasks:</atoms-text>
+            }
+            @for(subtask of formSubtasks; track subtask; let index = $index) {
+                <div class="detail-subTasks" [ngClass]="{subTaskComplete: subtask.get('status')?.value}" [formGroup]="subtask" >
+                    <atoms-text type="fade">{{subtask.get('title')?.value || ''}}</atoms-text>
+                    <mat-checkbox formControlName="status">
+                    </mat-checkbox>
+                </div>
+            }
+            <molecules-input controlName="status" [optionsSelect]="menuOptions" type="select" label="Status:"></molecules-input>
+            <atoms-button class="button" (click)="updateTask()" size="full">Update</atoms-button>
+            <atoms-button class="button" (click)="closeTask()" size="full">Close</atoms-button>
+        </div>
+    }@else if(type == 'form-board') {
+        <div class="modal-content" [formGroup]="formBoard">
+            <atoms-text class="taskTitle">Create Board</atoms-text>
+            <molecules-input controlName="name" type="text" label="Board Name:"></molecules-input>
+            <atoms-button class="button" (click)="createBoard()" size="full">Update</atoms-button>
+            <atoms-button class="button" (click)="closeTask()" size="full">Close</atoms-button>
+        </div>
+    }
 </div>

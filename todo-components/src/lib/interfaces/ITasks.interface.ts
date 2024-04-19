@@ -14,7 +14,7 @@ export interface IListColumns {
     todos: ITask[];
     listsIds: string[];
     idList: string;
-    title: string;
+    status: string;
 }
 
 export interface IBoard {
@@ -32,4 +32,16 @@ export interface IDragDropInformation {
 export interface IDragDropInfoContainers {
     dragContainer: IDragDropInformation;
     dropContainer: IDragDropInformation;
+}
+
+export interface IModalInformation {
+    status: string;
+    data: ITask;
+}
+
+export interface INewBoard {
+    data: {
+        name: string;
+    };
+    status: string;
 }

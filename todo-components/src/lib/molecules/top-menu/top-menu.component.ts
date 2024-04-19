@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { TextComponent } from '../../atoms/text/text.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
 
@@ -18,4 +18,9 @@ import { ButtonComponent } from '../../atoms/button/button.component';
 export class TopMenuComponent {
     @Input() title: string | undefined = '';
     @Input() buttonText: string | undefined = '';
+    @Output() clickButtonEmit: EventEmitter<any> = new EventEmitter();
+
+    clickButton() {
+        this.clickButtonEmit.emit();
+    }
 }

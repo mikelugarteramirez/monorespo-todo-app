@@ -3,9 +3,9 @@
 }
 .container {
   background: #23232d;
-  height: 100%;
   position: relative;
   padding-top: 25px;
+  height: -webkit-fill-available;
 }
 
 .title-opcion {

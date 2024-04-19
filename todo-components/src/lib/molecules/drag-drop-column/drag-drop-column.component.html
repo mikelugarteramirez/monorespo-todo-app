@@ -9,7 +9,7 @@
       class="itemList"
       (cdkDropListDropped)="drop($event)">
       @for (todo of todos; track todo.title) {
-        <molecules-todo-card cdkDrag [titleTask]="todo.title" [description]="todo.description" [totalSubTasks]="todo.subTasks.length"></molecules-todo-card>
+        <molecules-todo-card (clickCardEvent)="clickOneCard($event)" cdkDrag [task]="todo"></molecules-todo-card>
       }
     </div>
 </div>

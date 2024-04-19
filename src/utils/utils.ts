@@ -6,7 +6,7 @@ export const info = [
       columns: [{
           listsIds: ['listColumn2', 'listColumn3'],
           idList: 'listColumn1',
-          title: 'Todo',
+          status: 'todo',
           todos: [
             {
               title: 'Tarea 1',
@@ -31,7 +31,7 @@ export const info = [
         {
           listsIds: ['listColumn1', 'listColumn3'],
           idList: 'listColumn2',
-          title: 'Todo 2',
+          status: 'doing',
           todos: [
             {
               title: 'Tarea 1',
@@ -56,7 +56,7 @@ export const info = [
         {
           listsIds: ['listColumn1', 'listColumn2'],
           idList: 'listColumn3',
-          title: 'Todo 3',
+          status: 'done',
           todos: [
             {
               title: 'Tarea 1',
@@ -87,7 +87,7 @@ export const info = [
       columns: [{
           listsIds: ['listColumn2', 'listColumn3'],
           idList: 'listColumn1',
-          title: 'Todo',
+          status: 'todo',
           todos: [
             {
               title: 'Tarea 1',
@@ -112,7 +112,7 @@ export const info = [
         {
           listsIds: ['listColumn1', 'listColumn3'],
           idList: 'listColumn2',
-          title: 'Todo 2',
+          status: 'doing',
           todos: [
             {
               title: 'Tarea 1',
@@ -137,7 +137,7 @@ export const info = [
         {
           listsIds: ['listColumn1', 'listColumn2'],
           idList: 'listColumn3',
-          title: 'Todo 3',
+          status: 'done',
           todos: [
             {
               title: 'Tarea 1',
@@ -168,7 +168,7 @@ export const info = [
       columns: [{
           listsIds: ['listColumn2', 'listColumn3'],
           idList: 'listColumn1',
-          title: 'Todo',
+          status: 'todo',
           todos: [
             {
               title: 'Tarea 1',
@@ -193,7 +193,7 @@ export const info = [
         {
           listsIds: ['listColumn1', 'listColumn3'],
           idList: 'listColumn2',
-          title: 'Todo 2',
+          status: 'doing',
           todos: [
             {
               title: 'Tarea 1',
@@ -218,7 +218,7 @@ export const info = [
         {
           listsIds: ['listColumn1', 'listColumn2'],
           idList: 'listColumn3',
-          title: 'Todo 3',
+          status: 'done',
           todos: [
             {
               title: 'Tarea 1',

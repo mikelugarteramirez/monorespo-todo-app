@@ -29,6 +29,7 @@ export class LateralMenuComponent implements OnInit {
 
     @Output() switchSatusChage: EventEmitter<boolean> = new EventEmitter();
     @Output() clickOptionChange: EventEmitter<string> = new EventEmitter();
+    @Output() clickAddBoard: EventEmitter<string> = new EventEmitter();
 
     hideSideBar = false;
     
@@ -61,5 +62,6 @@ export class LateralMenuComponent implements OnInit {
     }
 
     createBoard() {
+        this.clickAddBoard.emit();
     }
 }

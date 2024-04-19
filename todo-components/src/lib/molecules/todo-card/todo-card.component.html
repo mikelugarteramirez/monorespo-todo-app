@@ -1,7 +1,7 @@
-<div class="container">
-    <atoms-text>{{titleTask}}</atoms-text>
-    <atoms-text>{{description}}</atoms-text>
-    @if(totalSubTasks != 0) {
-        <atoms-text class="totalSubTask" type="fade" size="small">{{totalSubTasks}} of {{subTasksComplete}}</atoms-text>
+<div class="container" (click)="clickCard()">
+    <atoms-text>{{task.title}}</atoms-text>
+    <atoms-text>{{task.description}}</atoms-text>
+    @if(task.subTasks.length != 0) {
+        <atoms-text class="totalSubTask" type="fade" size="small">{{task.subTasks.length}} of 0</atoms-text>
     }
 </div>

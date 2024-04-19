@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import {
     CdkDragDrop,
@@ -33,6 +33,7 @@ export class DragDropColumnComponent {
     @Input() title!: string;
 
     @Output() changeStatusTask: EventEmitter<IDragDropInfoContainers> = new EventEmitter();
+    @Output() clickCardEvent: EventEmitter<ITask> = new EventEmitter();
 
     changeTaskListener(dragContainer: IDragDropInformation,  dropContainer: IDragDropInformation) {
       this.changeStatusTask.emit({dragContainer, dropContainer});
@@ -50,5 +51,9 @@ export class DragDropColumnComponent {
             event.currentIndex,
           );
       }
+    }
+
+    clickOneCard(task: ITask) {
+      this.clickCardEvent.emit(task);
     }
 }

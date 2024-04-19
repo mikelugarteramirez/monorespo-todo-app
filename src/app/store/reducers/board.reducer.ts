@@ -1,7 +1,7 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action, ActionReducer, MetaReducer } from '@ngrx/store';
 
-import * as BoardActions from './board.actions';
+import * as BoardActions from '../actions/board.actions';
 import { IBoard } from '@todoapp/todo-components/interfaces';
 
 

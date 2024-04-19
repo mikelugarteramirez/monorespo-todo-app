@@ -2,7 +2,7 @@ import { createAction, props } from '@ngrx/store';
 import { IBoard } from '@todoapp/todo-components/interfaces';
 
 export const initBoard = createAction(
-  '[Board Information] Init',
+  '[Board Information] INIT',
   props<{ boards: IBoard[] }>()
 );
 

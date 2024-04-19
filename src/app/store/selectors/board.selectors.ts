@@ -1,11 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { BOARD_FEATURE_KEY, BoardState, boardAdapter } from './board.reducer';
+import { BOARD_FEATURE_KEY, BoardState, boardAdapter } from '../reducers/board.reducer';
 
 // Lookup the 'Board' feature state managed by NgRx
 export const selectBoardState =
   createFeatureSelector<BoardState>(BOARD_FEATURE_KEY);
-
-const { selectAll, selectEntities } = boardAdapter.getSelectors();
 
 export const selectAllBoard = createSelector(
   selectBoardState,

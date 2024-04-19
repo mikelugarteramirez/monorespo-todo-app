@@ -20,7 +20,7 @@ import { ControlContainer, FormGroupDirective, FormsModule, ReactiveFormsModule 
 })
 export class InputComponent {
     @Input() type: 'text' | 'textarea' | 'select' = 'text';
-    @Input() options: any[] = ['example', 'example2'];
+    @Input() options: string[] = [];
     @Input() controlName!: string;
 
 }
