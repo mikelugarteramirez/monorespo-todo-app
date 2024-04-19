@@ -6,6 +6,7 @@
       [cdkDropListData]="todos"
       [cdkDropListConnectedTo]="listsIds"
       class="itemList"
+      [ngClass]="{noDarkItemList: !dark}"
       (cdkDropListDropped)="drop($event)">
       @for (todo of todos; track todo.title) {
         <molecules-todo-card (clickCardEvent)="clickOneCard($event)" [dark]="dark" cdkDrag [task]="todo"></molecules-todo-card>

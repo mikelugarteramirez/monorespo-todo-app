@@ -13,6 +13,9 @@
 
 .itemList {
   overflow: scroll;
+  background: #353545;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .itemList::-webkit-scrollbar {
@@ -21,4 +24,8 @@
 
 .itemList::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.noDarkItemList {
+  background: #F5F5F5;
 }
