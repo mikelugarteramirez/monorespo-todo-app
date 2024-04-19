@@ -4,8 +4,16 @@
 .container {
   background: #23232d;
   position: relative;
-  padding-top: 25px;
   height: -webkit-fill-available;
+}
+
+.image-container {
+  display: flex;
+}
+
+.image-container svg {
+  width: 100px;
+  margin: auto;
 }
 
 .title-opcion {
