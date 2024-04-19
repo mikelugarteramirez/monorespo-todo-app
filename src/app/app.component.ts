@@ -125,7 +125,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if(info.status == 'board') {
       const newBoard = {
         ...info.data, 
-        active: true,
+        active: false,
         icon: 'view_list',
         columns: [{
             listsIds: ['listColumn2', 'listColumn3'],

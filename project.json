@@ -92,6 +92,16 @@
       "options": {
         "jestConfig": "jest.config.app.ts"
       }
+    },
+    "deploy": {
+      "executor": "@angular/fire:deploy",
+      "options": {
+        "prerender": false,
+        "ssr": true,
+        "browserTarget": "todoapp:build:production",
+        "firebaseProject": "todo-app",
+        "firebaseHostingSite": "todo-project-88c19"
+      }
     }
   }
 }
