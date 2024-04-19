@@ -9,7 +9,7 @@ import { createBoard, setBoardChangeStatusTask } from './store/actions/board.act
 import { info, removeReference } from 'src/utils/utils';
 import { IStateMenu } from './store/interfaces/IMenuStore.interface';
 import { selectMenuInformation } from './store/selectors/menu.selectors';
-import { setShowModal, setStatusOptions } from './store/actions/menu.actions';
+import { setShowModal, setStatusOptions, setSwicthDarkMode } from './store/actions/menu.actions';
 
 @Component({
   standalone: true,
@@ -157,8 +157,13 @@ export class AppComponent implements OnInit, OnDestroy {
     this.switchModalShow(true, 'detail');
   }
 
+  switchDarkMode(status: boolean) {
+    this.store.dispatch(setSwicthDarkMode({payload: status}))
+  }
+
   ngOnDestroy(): void {
       this.boards$.unsubscribe();
       this.selectedOption$.unsubscribe();
+      this.menu$.unsubscribe();
   }
 }

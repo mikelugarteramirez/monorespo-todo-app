@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'atoms-switch',
@@ -16,6 +16,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 })
 export class SwitchComponent implements OnInit {
     @Input() switchValue: boolean = true;
+    @Output() eventSwitch: EventEmitter<boolean> = new EventEmitter();
 
     switchStatus: boolean = false;
 
@@ -25,5 +26,6 @@ export class SwitchComponent implements OnInit {
 
     switchClick(): void {
         this.switchStatus = !this.switchStatus;
+        this.eventSwitch.emit(this.switchStatus);
     }
 }

@@ -26,10 +26,12 @@ export class LateralMenuComponent implements OnInit {
         icon: 'view_list',
         action: true
     };
+    @Input() dark: boolean = true;
 
     @Output() switchSatusChage: EventEmitter<boolean> = new EventEmitter();
     @Output() clickOptionChange: EventEmitter<string> = new EventEmitter();
     @Output() clickAddBoard: EventEmitter<string> = new EventEmitter();
+    @Output() clickSwicth: EventEmitter<boolean> = new EventEmitter();
 
     hideSideBar = false;
     
@@ -63,5 +65,8 @@ export class LateralMenuComponent implements OnInit {
 
     createBoard() {
         this.clickAddBoard.emit();
+    }
+    clickSwicthDark(status: boolean) {
+        this.clickSwicth.emit(status);
     }
 }

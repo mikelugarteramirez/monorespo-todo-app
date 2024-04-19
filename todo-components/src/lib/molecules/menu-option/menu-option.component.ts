@@ -11,14 +11,14 @@ import { MatIconModule } from '@angular/material/icon';
     ],
     template: `
     @if(!action){
-        <div class="container" [ngClass]="{selected}">
+        <div class="container" [ngClass]="{selected, noDark: !dark}">
             <mat-icon class="icon" aria-hidden="false" [fontIcon]="iconName"></mat-icon>
-            <atoms-text>{{textOption}}</atoms-text>
+            <atoms-text [dark]="dark">{{textOption}}</atoms-text>
         </div>
     }@else {
-        <div class="container functionality" (click)="clickFuncionality()">
+        <div class="container functionality" [ngClass]="{noDark: !dark}" (click)="clickFuncionality()">
             <mat-icon class="icon" aria-hidden="false" [fontIcon]="iconName"></mat-icon>
-            <atoms-text>{{textOption}}</atoms-text>
+            <atoms-text [dark]="dark">{{textOption}}</atoms-text>
         </div>
     }`,
     styleUrl: './menu-option.component.css',
@@ -29,6 +29,7 @@ export class MenuOptionComponent {
     @Input() iconName: string = '';
     @Input() selected: boolean | undefined = false;
     @Input() action: boolean = false;
+    @Input() dark: boolean = true;
     
     @Output() emitsClick: EventEmitter<void> = new EventEmitter();
 

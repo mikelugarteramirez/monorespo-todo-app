@@ -1,7 +1,7 @@
-<div class="container" (click)="clickCard()">
-    <atoms-text>{{task.title}}</atoms-text>
-    <atoms-text>{{task.description}}</atoms-text>
+<div class="container" (click)="clickCard()" [ngClass]="{nodark: !dark}">
+    <atoms-text [dark]="dark">{{task.title}}</atoms-text>
+    <atoms-text [dark]="dark">{{task.description}}</atoms-text>
     @if(task.subTasks.length != 0) {
-        <atoms-text class="totalSubTask" type="fade" size="small">{{task.subTasks.length}} of 0</atoms-text>
+        <atoms-text class="totalSubTask" type="fade" size="small" [dark]="dark">{{task.subTasks.length}} of 0</atoms-text>
     }
 </div>

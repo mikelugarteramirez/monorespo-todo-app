@@ -31,6 +31,7 @@ export class DragDropColumnComponent {
     @Input() listsIds: string[] = [];
     @Input() idList!: string | number;
     @Input() title!: string;
+    @Input() dark: boolean = true;
 
     @Output() changeStatusTask: EventEmitter<IDragDropInfoContainers> = new EventEmitter();
     @Output() clickCardEvent: EventEmitter<ITask> = new EventEmitter();

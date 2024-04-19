@@ -3,6 +3,9 @@
     [boards]="boards" 
     (clickOptionChange)="clickOption($event)" 
     (clickAddBoard)="createBoard()"
+    (clickSwicth)="switchDarkMode($event)"
+    [switchDarkStatus]="menuInfo.switchDarkMode"
+    [dark]="menuInfo.switchDarkMode"
     class="menu-lateral"></organisms-lateral-menu>
     <div class="board">
         <molecules-top-menu 
@@ -12,7 +15,9 @@
         <organisms-board class="organisms-board" 
         [listColumns]="selectedOption?.columns" 
         (changeStatusTask)="changeStatusTask($event)"
-        (clickCardEvent)="clickOneCard($event)"></organisms-board>
+        (clickCardEvent)="clickOneCard($event)"
+        [dark]="menuInfo.switchDarkMode"
+        ></organisms-board>
     </div>
 </div>
 @if(menuInfo.swithShowModal.show) {

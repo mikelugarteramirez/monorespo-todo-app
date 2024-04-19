@@ -16,6 +16,7 @@ import { ITask } from '../../interfaces/ITasks.interface';
 })
 export class TodoCardComponent {
     @Input() task!: ITask;
+    @Input() dark: boolean = true;
 
     @Output() clickCardEvent: EventEmitter<ITask> = new EventEmitter();
 

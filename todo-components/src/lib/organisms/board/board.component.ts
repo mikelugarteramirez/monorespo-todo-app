@@ -16,6 +16,7 @@ import { IDragDropInfoContainers, IListColumns, ITask } from '../../interfaces/I
 })
 export class BoardComponent {
     @Input() listColumns: IListColumns[] | undefined;
+    @Input() dark: boolean = true;
     @Output() changeStatusTask: EventEmitter<IDragDropInfoContainers> = new EventEmitter();
     @Output() clickCardEvent: EventEmitter<ITask> = new EventEmitter();
 

@@ -18,3 +18,8 @@
 .container:active {
   cursor: grabbing;
 }
+
+.nodark {
+  background: #fff;
+  border: 1px solid #c2c2c2c2;
+}

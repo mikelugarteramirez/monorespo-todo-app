@@ -16,7 +16,7 @@ export const menuAdapter: EntityAdapter<IStateMenu> =
 
 export const initialMenuState: IStateMenu = menuAdapter.getInitialState({
     switchShowMenu: true,
-    switchDarkMode: false,
+    switchDarkMode: true,
     swithShowModal: {
       type: 'form',
       show: false

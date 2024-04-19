@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngClass]="{nodark: !dark}">
     @for(listColumn of listColumns; track listColumn.idList){
         <molecules-drag-drop-column class="column" 
             [todos]="listColumn.todos"
@@ -7,6 +7,7 @@
             [title]="listColumn.status"
             (changeStatusTask)="changeTasksDroped($event)"
             (clickCardEvent)="clickOneCard($event)"
+            [dark]="dark"
         ></molecules-drag-drop-column>
     }
 </div>

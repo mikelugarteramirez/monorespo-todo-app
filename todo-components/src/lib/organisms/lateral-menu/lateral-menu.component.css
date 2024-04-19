@@ -55,3 +55,8 @@
 .options {
   padding-right: 25px;
 }
+
+.noDark {
+  background: #fff;
+  box-shadow: 1px 1px 1px #000;
+}
