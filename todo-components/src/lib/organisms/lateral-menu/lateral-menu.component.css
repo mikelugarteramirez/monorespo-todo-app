@@ -5,6 +5,7 @@
   background: #23232d;
   position: relative;
   height: -webkit-fill-available;
+  width: 300px;
 }
 
 .image-container {
@@ -59,4 +60,8 @@
 .noDark {
   background: #fff;
   box-shadow: 1px 1px 1px #000;
+}
+
+.reduce {
+  width: 80px;
 }
